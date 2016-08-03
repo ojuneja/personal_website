@@ -1,0 +1,254 @@
+<!-- Author: Ojas Juneja -->
+<!doctype html>
+<html ng-app="portfolioApp">
+<head>
+    <title>ojasjuneja</title>
+    <link rel="stylesheet" href="app/scripts/main.css">
+    <link rel="stylesheet" href="app/scripts/bootstrap.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="app/scripts/bootstrap-social.css">
+   
+        <style>
+            #aboutme {padding-top:50px;color: #fff; background-color:#2e3842;}
+            #projects {padding-top:0px;color: #fff; background-color: #2e3842;}
+            #experiences {padding-top:50px;color: #fff; background-color: #2e3842;}
+            #contact {padding-top:50px;color: #fff; background-color:#2e3842;}
+        </style> 
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50" class="landing" ng-controller="generalController">
+<div id="page-wrapper">
+    
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#banner" >Ojas Juneja</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="#aboutme">About Me</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experiences">Experience</a></li>
+          <li><a href="#contact">Contact Me</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+    <!-- Banner -->
+					<section id="banner" style="height: 100vh;" >
+						<div class="inner" style="color:white;">
+							<h2>{{appSettings.title}}</h2>
+							<p>{{appSettings.heading}}<br />
+
+				        </div>
+					</section>
+    
+        <!-- About Me -->
+					<section id="aboutme" class="wrapper style1 special" ng-controller="aboutmeController">
+						<div class="inner">
+							<header class="major">
+                                <h2>{{aboutmeHeading}}</h2>
+								<p ng-repeat="data in aboutmeData">
+                                {{data}}
+                                <br>    
+                                </p>
+                                <br>
+                                <a href="{{appSettings.github}}" class="btn btn-social-icon btn-lg btn-github" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;"><span class="fa fa-github"></span></a> 
+                                &nbsp;&nbsp;
+                                <a href="{{appSettings.linkedin}}" class="btn btn-social-icon btn-lg btn-linkedin" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;"><span class="fa fa-linkedin"></span></a> 
+                                  &nbsp;&nbsp;
+                               <a href="{{appSettings.resume}}" class="fa fa-file-pdf-o" 
+                                  onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;"
+                                  style="color:red;font-size:43px;top:10px;position:relative;"></a>
+							</header>
+							
+                    <a href="#introduction" class="button more scrolly">View Projects</a>
+
+						</div>
+					</section>
+
+					<!-- Intro To Projects -->
+						<section id="introduction" class="wrapper style4">
+							<center>
+								<header style="color:white;" class="scroll-projects">
+									<h2>Projects</h2>
+								</header>
+							</center>
+						</section>
+
+				<!-- Projects -->
+					<section id="projects" class="wrapper alt style2" ng-controller="projectController">
+						<section class="spotlight">
+							<img src="app/images/a.png" />
+                            <div class="content">
+								<h2 onclick="location.href='';" style="cursor:pointer;" >{{projectChemAppHeading}}</h2>
+								<p ng-repeat="data in projectChemAppContent">
+                                {{data}}
+                                <br>    
+                                </p>
+                                <br><br>
+                                <a href="#spotlight-dist" class="button special more scrolly">Next Project</a>
+                                 <br><br>
+							</div>
+						</section>
+                        
+						<section class="spotlight" id="spotlight-dist">
+							<img src="app/images/ood.png" />
+                            <div class="content">
+								<h2 onclick="location.href='';" style="cursor:pointer;" >{{projectDistAppHeading}}</h2>
+								<p ng-repeat="data in projectDistAppContent">
+                                {{data}}
+                                <br>    
+                                </p>
+                                <br><br>
+                                <a href="#spotlight-preman" class="button special more scrolly">Next Project</a>
+                                 <br><br>
+							</div>
+						</section>
+                        
+                        <section class="spotlight" id="spotlight-preman">
+							<img src="app/images/cc.jpg" />
+                            <div class="content">
+								<h2 onclick="location.href='';" style="cursor:pointer;" >{{projectPreManAppHeading}}</h2>
+								<p ng-repeat="data in projectPreManContent">
+                                {{data}}
+                                <br>    
+                                </p>
+                                 <br><br>
+                                <a href="#spotlight-movie" class="button special more scrolly">Next Project</a>
+                                 <br><br>
+							</div>
+						</section>
+                        
+                        <section class="spotlight" id="spotlight-movie">
+							<img src="app/images/dm.png" />
+                            <div class="content">
+								<h2 onclick="location.href='';" style="cursor:pointer;" >{{projectMovieRecommendationAppHeading}}</h2>
+								<p ng-repeat="data in projectMovieRecommendationAppContent">
+                                {{data}}
+                                <br>    
+                                </p>
+                               <br><br>
+                                <a href="#spotlight-nosql" class="button special more scrolly">Next Project</a>
+                                <br><br>
+							</div>
+						</section>
+                        
+                        <section class="spotlight" id="spotlight-nosql">
+							<img src="app/images/sma.png" />
+                            <div class="content">
+								<h2 onclick="location.href='';" style="cursor:pointer;" >{{projectNoSqlAppHeading}}</h2>
+								<p ng-repeat="data in projectNoSqlAppContent">
+                                {{data}}
+                                <br>    
+                                </p>
+                               <br><br>
+                                <a href="#spotlight-ai" class="button special more scrolly">Next Project</a>
+                                <br><br>
+							</div>
+						</section>
+                        
+                        <section class="spotlight" id="spotlight-ai">
+							<img src="app/images/ai.png" />
+                            <div class="content">
+								<h2 onclick="location.href='';" style="cursor:pointer;" >{{projectImageAppHeading}}</h2>
+								<p ng-repeat="data in projectImageAppContent">
+                                {{data}}
+                                <br>    
+                                </p>
+                                <br><br>
+                                <a href="#experiences" class="button special more scrolly">See Experience</a>
+                                <br><br>
+							</div>
+						</section>
+					</section>
+
+    
+    
+					<!-- Intro To Experience -->
+						<section id="introduction" class="wrapper style4">
+							<center>
+								<header style="color:white;">
+									<h2>Professional Experience</h2>
+								</header>
+							</center>
+						</section>
+
+     <!-- Experiences -->
+					<section id="experiences" class="wrapper style1 special" ng-controller="expereincesController">
+						<div class="inner">
+							<header class="major">
+                                <h2>{{collabworxHeading}}</h2>
+                                <h5>{{collabworxSubHeading}}</h5>
+								<p ng-repeat="data in collabworxContent">
+                                {{data}}
+                                <br>    
+                                </p>
+							</header>
+						</div>
+                        <br><br><br>
+                        <div class="inner">
+							<header class="major">
+                                <h2>{{cognizantHeading}}</h2>
+                                 <h5>{{cognizantSubHeading}}</h5>
+								<p ng-repeat="data in cognizantContent">
+                                {{data}}
+                                <br>    
+                                </p>
+							</header>
+							
+						</div>
+					</section>
+    
+    <!-- Footer -->
+					<section id="contact" class="wrapper style1 special">
+						<h1>Contact</h1>
+						<p>Feel free to reach out to me, and I'll get back to you as soon as possible</p>
+						<ul class="icons">
+							<li><a href="{{appSettings.linkedin}}" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" class="icon fa-linkedin"></a></li>
+                            
+							<li><a href="{{appSettings.github}}" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" class="icon fa-github"></a></li>
+                            
+							<li><a href="{{appSettings.mail}}" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" class="icon fa-envelope"></a></li>
+                            
+							<li><a href="{{appSettings.resume}}" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" class="icon fa-file-text"></a></li>
+                            
+                            <li><a href="{{appSettings.stackoverflow}}" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" class="icon fa-stack-overflow"></a></li>
+                            
+                            <li><a href="{{appSettings.facebook}}" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" class="icon fa-facebook"></a></li>
+						</ul>
+                        <br>
+                        <p>{{appSettings.address}}</p>
+                        <p>{{appSettings.phone}}</p>
+                         
+					</section>
+
+
+
+
+				
+    
+</div>  
+ <script src="app/scripts/jquery.js"></script>  
+    <script src="app/scripts/bootstrap.min.js"></script>      
+    <script src="app/scripts/angular.js"></script>
+    <script src="app/scripts/smoothscroll.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers/aboutmeController.js"></script>
+    <script src="app/controllers/projectController.js"></script>
+    <script src="app/controllers/expereincesController.js"></script>
+    <script src="app/controllers/generalController.js"></script>
+    <script src="app/services/values.js"></script>
+    <script src="app/services/experiencesFactory.js"></script>
+    <script src="app/services/projectFactory.js"></script>
+    <script src="app/services/aboutmeFactory.js"></script>    
+</body>
+</html>
